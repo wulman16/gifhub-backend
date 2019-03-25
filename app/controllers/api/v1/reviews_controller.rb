@@ -9,9 +9,9 @@ class Api::V1::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     if @review.save
-      render json: @note, status: :accepted
+      render json: @review, status: :accepted
     else
-      render json: { errors: @note.errors.full_messages }, status: :unprocessible_entity
+      render json: { errors: @review.errors.full_messages }, status: :unprocessible_entity
     end
   end
 
@@ -23,7 +23,7 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:rating, :content, :gif_id, :user_id)
+    params.require(:review).permit(:rating, :content, :gif_id, :user_id)
   end
 
   def find_review
