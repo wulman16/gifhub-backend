@@ -13,6 +13,6 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def find_review
-    @review = Review.all(params[:id])
+    @review = Review.find(params[:id])
   end
 end
