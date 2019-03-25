@@ -11,7 +11,7 @@ class Api::V1::GifsController < ApplicationController
   end
 
   def create
-    @gif = Review.new(gif_params)
+    @gif = Gif.new(gif_params)
     if @gif.save
       render json: @gif, status: :accepted
     else
