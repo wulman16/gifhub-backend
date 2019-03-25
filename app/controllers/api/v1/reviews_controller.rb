@@ -1,10 +1,10 @@
 class Api::V1::ReviewsController < ApplicationController
   before_action :find_review, only: [:show]
 
-  def index
-    @reviews = Review.all
-    render json: @reviews
-  end
+  # def index
+  #   @reviews = Review.all
+  #   render json: @reviews
+  # end
 
   def create
     @review = Review.new(review_params)
@@ -15,9 +15,9 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
-  def show
-    render json: @review
-  end
+  # def show
+  #   render json: @review
+  # end
 
 
   private
