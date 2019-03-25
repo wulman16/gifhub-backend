@@ -6,9 +6,13 @@ class Api::V1::ReviewsController < ApplicationController
     render json: @reviews
   end
 
+  def create
+  end
+
   def show
     render json: @review
   end
+
 
   private
 
