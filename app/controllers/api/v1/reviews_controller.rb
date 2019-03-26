@@ -23,7 +23,7 @@ class Api::V1::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content, :gif_id, :user_id)
+    params.permit(:rating, :content, :gif_id, :user_id)
   end
 
   def find_review
