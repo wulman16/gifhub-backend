@@ -7,6 +7,7 @@ class Review < ApplicationRecord
       id: self.id,
       gif_id: self.gif_id,
       user_id: self.user_id,
+      user_name: self.user.name,
       rating: self.rating,
       content: self.content
     }
