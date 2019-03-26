@@ -16,7 +16,7 @@ class Gif < ApplicationRecord
   end
 
   def avg_rating
-    self.reviews.average(:rating)
+    self.reviews.average(:rating).round(1)
   end
 
   def self.gif_json
