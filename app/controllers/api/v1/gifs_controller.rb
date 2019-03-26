@@ -3,7 +3,8 @@ class Api::V1::GifsController < ApplicationController
 
   def index
     @gifs = Gif.all
-    render json: @gifs.to_json(include: [:reviews]), status: :ok
+    # render json: @gifs.to_json(include: [:reviews]), status: :ok
+    render json: @gifs.gif_json, status: :ok
   end
 
   def show

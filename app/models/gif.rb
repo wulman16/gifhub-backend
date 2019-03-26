@@ -10,4 +10,8 @@ class Gif < ApplicationRecord
       reviews: self.reviews.collect(&:review_json)
     }
   end
+
+  def self.gif_json
+    Gif.all.collect { |gif| gif.gif_json }
+  end
 end
