@@ -12,6 +12,6 @@ class Gif < ApplicationRecord
   end
 
   def self.gif_json
-    Gif.all.collect { |gif| gif.gif_json }
+    Gif.all.collect(&:gif_json)
   end
 end
