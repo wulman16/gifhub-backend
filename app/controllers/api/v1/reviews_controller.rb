@@ -1,14 +1,14 @@
 class Api::V1::ReviewsController < ApplicationController
-  before_action :find_review, only: [:update, :destroy]
+  before_action :find_review, only: [:show, :update, :destroy]
 
   # def index
   #   @reviews = Review.all
   #   render json: @reviews
   # end
 
-  # def show
-  #   render json: @review
-  # end
+  def show
+    render json: @review, status: :ok
+  end
 
   def create
     @review = Review.new(review_params)

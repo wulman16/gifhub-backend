@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :gifs, except: [:new, :edit]
-      resources :reviews, only: [:create, :update, :destroy]
+      resources :reviews, only: [:show, :create, :update, :destroy]
       resources :users, only: [:create]
     end
   end
