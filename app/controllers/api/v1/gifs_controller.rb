@@ -7,7 +7,8 @@ class Api::V1::GifsController < ApplicationController
   end
 
   def show
-    render json: @gif.to_json(include: [:reviews]), status: :ok
+    # render json: @gif.to_json(include: [:reviews]), status: :ok
+    render json: @gif.gif_json, status: :ok
   end
 
   def create
