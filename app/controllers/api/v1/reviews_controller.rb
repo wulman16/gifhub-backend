@@ -1,9 +1,13 @@
 class Api::V1::ReviewsController < ApplicationController
-  before_action :find_review, only: [:update]
+  before_action :find_review, only: [:update, :destroy]
 
   # def index
   #   @reviews = Review.all
   #   render json: @reviews
+  # end
+
+  # def show
+  #   render json: @review
   # end
 
   def create
@@ -23,10 +27,13 @@ class Api::V1::ReviewsController < ApplicationController
     end
   end
 
-  # def show
-  #   render json: @review
-  # end
-
+  def destroy
+    if @review.destroy
+      render json: {}, status: :no_content
+    else
+      render json: { errors: @review.errors.full_messages }, status: :unprocessible_entity
+    end
+  end
 
   private
 
