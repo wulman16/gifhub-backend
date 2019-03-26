@@ -29,6 +29,14 @@ class Api::V1::GifsController < ApplicationController
     end
   end
 
+  def destroy
+    if @gif.destroy
+      render json: {}, status: :no_content
+    else
+      render json: { errors: @gif.errors.full_messages }, status: :unprocessible_entity
+    end
+  end
+
   private
 
   def gif_params
