@@ -1,6 +1,8 @@
 class Gif < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
+  validates :url, presence: true
+  validates :title, presence: true
 
   def gif_json
     {
@@ -8,6 +10,7 @@ class Gif < ApplicationRecord
       url: self.url,
       title: self.title,
       avg_rating: self.avg_rating,
+      created_at: self.created_at,
       reviews: self.reviews.collect(&:review_json)
     }
   end
