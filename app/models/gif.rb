@@ -7,7 +7,7 @@ class Gif < ApplicationRecord
       id: self.id,
       url: self.url,
       title: self.title,
-      reviews: self.reviews
+      reviews: self.reviews.collect(&:review_json)
     }
   end
 end
