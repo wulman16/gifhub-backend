@@ -11,7 +11,9 @@ class Review < ApplicationRecord
       user_id: self.user_id,
       user_name: self.user.name,
       rating: self.rating,
-      content: self.content
+      content: self.content,
+      created_at: self.created_at,
+      updated_at: self.updated_at
     }
   end
 end
