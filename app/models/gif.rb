@@ -16,7 +16,8 @@ class Gif < ApplicationRecord
   end
 
   def avg_rating
-    self.reviews.average(:rating)
+    # If no reviews exist, start with a default average rating of 5
+    !self.reviews.empty? ? self.reviews.average(:rating) : "5.0"
   end
 
   def self.gif_json
