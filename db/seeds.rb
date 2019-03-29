@@ -10,16 +10,22 @@ Review.destroy_all
 Gif.destroy_all
 User.destroy_all
 
-tyra = Gif.create(title: "tyra", url: "https://media.giphy.com/media/OpMAJdvTvXQYM/giphy.gif")
-mark = User.create(name: "mark")
-review1 = Review.create(rating: 5, content: "What a relatable gif! Exactly what I feel like when I'm programming.", gif_id: tyra.id, user_id: mark.id)
+tyra = Gif.create(title: "Tyra", url: "./images/tyra.gif")
+infinite_loop = Gif.create(title: "Infinite Loop", url: "./images/infinite_loop.png")
+techno_geeks = Gif.create(title: "Techno Geeks", url: "./images/techno_geeks.gif")
+rage = Gif.create(title: "Rage", url: "./images/rage.gif")
+judy = Gif.create(title: "Judge Judy", url: "./images/judy.gif")
+my_computer = Gif.create(title: "My Computer", url: "./images/my_computer.gif")
+bunny = Gif.create(title: "Bunny", url: "./images/bunny.gif")
 
-trash = Gif.create(title: "trash", url: "https://66.media.tumblr.com/28698d657cc1c5563ca77c1f17287905/tumblr_pfkug1t59y1w2im81_250.gif")
-helen = User.create(name: "helen")
-review2 = Review.create(rating: 4, content: "How meta. Really makes you think.", gif_id: trash.id, user_id: helen.id)
+darryl = User.create(name: "Darryl")
+janet = User.create(name: "Janet")
 
-rage = Gif.create(title: "rage", url:"https://media2.giphy.com/media/amUVFzg1wNZKg/giphy.gif")
-review3 = Review.create(rating: 2, content: "Could use more character development. Why is he so angry?", gif_id: rage.id, user_id: mark.id)
-review4 = Review.create(rating: 5, content: "A fascinating meditation on the human condition.", gif_id: rage.id, user_id: helen.id)
-
-judy = Gif.create(title: "judy", url:"https://media.giphy.com/media/7yDthHaq2haXS/giphy.gif")
+review1 = Review.create(rating: 5, content: "What a relatable GIF! Exactly what I feel like when I'm programming.", gif_id: tyra.id, user_id: darryl.id)
+review2 = Review.create(rating: 4, content: "How meta. Really makes you think.", gif_id: my_computer.id, user_id: janet.id)
+review3 = Review.create(rating: 3, content: "Could use more character development. Why is he so angry?", gif_id: rage.id, user_id: darryl.id)
+review4 = Review.create(rating: 5, content: "A fascinating meditation on the human condition.", gif_id: rage.id, user_id: janet.id)
+review5 = Review.create(rating: 4, content: "A disquieting play on the notion of deductive structure vis-à-vis the GIF frame. Pushes the boundaries of the medium in new and exciting ways.", gif_id: infinite_loop.id, user_id: janet.id)
+review6 = Review.create(rating: 1, content: "Hey, some people like spreadsheets! :(", gif_id: techno_geeks.id, user_id: darryl.id)
+review7 = Review.create(rating: 3, content: "The narrative takes a while to build up, but the shocking denouement is worth the wait.", gif_id: bunny.id, user_id: janet.id)
+review8 = Review.create(rating: 2, content: "A bit repetitive.", gif_id: bunny.id, user_id: darryl.id)
