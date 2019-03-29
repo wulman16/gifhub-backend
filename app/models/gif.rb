@@ -1,7 +1,7 @@
 class Gif < ApplicationRecord
   has_many :reviews
   has_many :users, through: :reviews
-  validates :url, presence: true
+  validates :url, presence: true, uniqueness: true
   validates :title, presence: true
 
   def gif_json
